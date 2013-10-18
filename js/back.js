@@ -14,6 +14,9 @@ function noop(e) {
 function drop(e) {
     e.stopPropagation();
     e.preventDefault();
+    
+    $('#loading').show();
+    $('#loading').text("loading...");
     if (source != null) source.disconnect(0);
 
     source = audio.createBufferSource();
@@ -26,6 +29,7 @@ function drop(e) {
         if (audio.decodeAudioData) {
             audio.decodeAudioData(e.target.result, function(b) {
                 source.buffer = b;
+                $('#loading').hide();
             }, function(e) {
                 clog(e);
                 alert('Audio not playable or not supported.');
@@ -33,6 +37,7 @@ function drop(e) {
         }
         else {
             source.buffer = audio.createBuffer(e.target.result, true);
+            $('#loading').hide();
         }
     }
 
