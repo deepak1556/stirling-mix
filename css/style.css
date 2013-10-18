@@ -116,3 +116,11 @@ html, body {
 			transform: translateZ(-595px);
 	background-color: #000000;
 }
+
+#loading {
+	font-size: 46px;
+	position: absolute;
+	top: 50%;
+    	left: 50%;
+	width: 100%;
+}
