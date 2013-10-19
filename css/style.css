@@ -1,0 +1,118 @@
+/**
+ * html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline)
+ * v1.6.1 2010-09-17 | Authors: Eric Meyer & Richard Clark
+ * html5doctor.com/html-5-reset-stylesheet/
+ */
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* The Magnificent Clearfix: Updated to prevent margin-collapsing on child elements.
+   j.mp/bestclearfix */
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+.clearfix:after { clear: both; }
+/* Fix clearfix: blueprintcss.lighthouseapp.com/projects/15318/tickets/5-extra-margin-padding-bottom-of-page */
+.clearfix { zoom: 1; }
+
+
+html, body {
+	width: 100%;
+	height: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #CCC;
+	font-size: 11px;
+}
+
+            .container {
+	-webkit-perspective: 900px;
+			perspective: 900px;
+	-webkit-transform-style: preserve-3d;
+			transform-style: preserve-3d;
+	width: 100%;
+	height: 100%;
+}
+@media screen and (min-width: 800px) {
+	.container {
+		-webkit-perspective: 1400px;
+				perspective: 1400px;
+	}
+}
+
+#container
+{
+	height: 100%;
+	left: 0px;
+	background: #000;
+	background-position: center;
+	background-repeat: no-repeat;
+	position:relative;
+	overflow:hidden;
+}
+
+.room {
+	height: 100%;
+	transform-style: preserve-3d; /*Firefox*/
+}
+
+.room > div {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-color: #D6D6D6;
+	box-shadow: inset 0 0 150px rgba(0,0,0,0.15);
+}
+
+.room .top {
+	height: 600px;
+	-webkit-transform: rotateX(-90deg);
+			transform: rotateX(-90deg);
+	-webkit-transform-origin: 0 0;
+			transform-origin: 0 0;
+	background-color: #BBBBBB;
+}
+
+.room .bottom {
+	height: 600px;
+	-webkit-transform: rotateX(90deg);
+			transform: rotateX(90deg);
+	-webkit-transform-origin: 0 100%;
+			transform-origin: 0 100%;
+	background-color: #D6D6D6;
+	bottom: 0;
+}
+
+.room .left {
+	-webkit-transform: rotateY(90deg);
+			transform: rotateY(90deg);
+	-webkit-transform-origin: 0 0;
+			transform-origin: 0 0;
+	width: 600px;
+}
+.room .right {
+	-webkit-transform: rotateY(-90deg);
+			transform: rotateY(-90deg);
+	-webkit-transform-origin: 100% 0;
+			transform-origin: 100% 0;
+	width: 600px;
+	right: 0;
+}
+
+.room .back {
+	-webkit-transform: translateZ(-595px);
+			transform: translateZ(-595px);
+	background-color: #000000;
+}
